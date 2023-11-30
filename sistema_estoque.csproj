@@ -1,0 +1,437 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{D9ACED22-F577-490D-8233-DE6D71F8CB5D}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>sistema_estoque</RootNamespace>
+    <AssemblyName>sistema_estoque</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>inventario.ico</ApplicationIcon>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Correios, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Correios-Api.1.1.1\lib\portable-net45+win\Correios.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Windows.Forms.DataVisualization" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="bancodedados.cs" />
+    <Compile Include="FormCadCategorias.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormCadCategorias.Designer.cs">
+      <DependentUpon>FormCadCategorias.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormCadClientes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormCadClientes.Designer.cs">
+      <DependentUpon>FormCadClientes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormCadFornecedor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormCadFornecedor.Designer.cs">
+      <DependentUpon>FormCadFornecedor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormCadMarca.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormCadMarca.Designer.cs">
+      <DependentUpon>FormCadMarca.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormCadProdutos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormCadProdutos.Designer.cs">
+      <DependentUpon>FormCadProdutos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormCadUnidadeMedida.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormCadUnidadeMedida.Designer.cs">
+      <DependentUpon>FormCadUnidadeMedida.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormCadUsuarios.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormCadUsuarios.Designer.cs">
+      <DependentUpon>FormCadUsuarios.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormEditCategoria.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormEditCategoria.Designer.cs">
+      <DependentUpon>FormEditCategoria.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormEditCliente.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormEditCliente.Designer.cs">
+      <DependentUpon>FormEditCliente.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormEditForne.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormEditForne.Designer.cs">
+      <DependentUpon>FormEditForne.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormEditMarca.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormEditMarca.Designer.cs">
+      <DependentUpon>FormEditMarca.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormEditProd.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormEditProd.Designer.cs">
+      <DependentUpon>FormEditProd.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormEditUnidadeMedida.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormEditUnidadeMedida.Designer.cs">
+      <DependentUpon>FormEditUnidadeMedida.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormEditUser.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormEditUser.Designer.cs">
+      <DependentUpon>FormEditUser.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormListaCategorias.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormListaCategorias.Designer.cs">
+      <DependentUpon>FormListaCategorias.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormListaClientes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormListaClientes.Designer.cs">
+      <DependentUpon>FormListaClientes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormListaFornecedores.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormListaFornecedores.Designer.cs">
+      <DependentUpon>FormListaFornecedores.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormListaMarca.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormListaMarca.Designer.cs">
+      <DependentUpon>FormListaMarca.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormListaProdutos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormListaProdutos.Designer.cs">
+      <DependentUpon>FormListaProdutos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormListaUnidadesMedida.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormListaUnidadesMedida.Designer.cs">
+      <DependentUpon>FormListaUnidadesMedida.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormListaUsuarios.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormListaUsuarios.Designer.cs">
+      <DependentUpon>FormListaUsuarios.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormLogin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormLogin.Designer.cs">
+      <DependentUpon>FormLogin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormPrincipal.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormPrincipal.Designer.cs">
+      <DependentUpon>FormPrincipal.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormSelecionaCategoria.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormSelecionaCategoria.Designer.cs">
+      <DependentUpon>FormSelecionaCategoria.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormSelecionarFornecedor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormSelecionarFornecedor.Designer.cs">
+      <DependentUpon>FormSelecionarFornecedor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormSelecionarMarca.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormSelecionarMarca.Designer.cs">
+      <DependentUpon>FormSelecionarMarca.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormSelecionarUnidadeMedida.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormSelecionarUnidadeMedida.Designer.cs">
+      <DependentUpon>FormSelecionarUnidadeMedida.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="setStock_dbDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>setStock_dbDataSet.xsd</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="FormCadCategorias.resx">
+      <DependentUpon>FormCadCategorias.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormCadClientes.resx">
+      <DependentUpon>FormCadClientes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormCadFornecedor.resx">
+      <DependentUpon>FormCadFornecedor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormCadMarca.resx">
+      <DependentUpon>FormCadMarca.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormCadProdutos.resx">
+      <DependentUpon>FormCadProdutos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormCadUnidadeMedida.resx">
+      <DependentUpon>FormCadUnidadeMedida.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormCadUsuarios.resx">
+      <DependentUpon>FormCadUsuarios.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormEditCategoria.resx">
+      <DependentUpon>FormEditCategoria.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormEditCliente.resx">
+      <DependentUpon>FormEditCliente.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormEditForne.resx">
+      <DependentUpon>FormEditForne.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormEditMarca.resx">
+      <DependentUpon>FormEditMarca.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormEditProd.resx">
+      <DependentUpon>FormEditProd.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormEditUnidadeMedida.resx">
+      <DependentUpon>FormEditUnidadeMedida.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormEditUser.resx">
+      <DependentUpon>FormEditUser.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormListaCategorias.resx">
+      <DependentUpon>FormListaCategorias.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormListaClientes.resx">
+      <DependentUpon>FormListaClientes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormListaFornecedores.resx">
+      <DependentUpon>FormListaFornecedores.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormListaMarca.resx">
+      <DependentUpon>FormListaMarca.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormListaProdutos.resx">
+      <DependentUpon>FormListaProdutos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormListaUnidadesMedida.resx">
+      <DependentUpon>FormListaUnidadesMedida.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormListaUsuarios.resx">
+      <DependentUpon>FormListaUsuarios.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormLogin.resx">
+      <DependentUpon>FormLogin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormPrincipal.resx">
+      <DependentUpon>FormPrincipal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormSelecionaCategoria.resx">
+      <DependentUpon>FormSelecionaCategoria.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormSelecionarFornecedor.resx">
+      <DependentUpon>FormSelecionarFornecedor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormSelecionarMarca.resx">
+      <DependentUpon>FormSelecionarMarca.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormSelecionarUnidadeMedida.resx">
+      <DependentUpon>FormSelecionarUnidadeMedida.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <None Include="setStock_dbDataSet.xsc">
+      <DependentUpon>setStock_dbDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="setStock_dbDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>setStock_dbDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="setStock_dbDataSet.xss">
+      <DependentUpon>setStock_dbDataSet.xsd</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\logo_set_stock.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\demanda.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\inventario %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\man.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\chat.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\statistics.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\pie-chart.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\search.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\click.jpeg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\add-button.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\caixa.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\estoque-limitado.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\entregador.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\estoque.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\shopping-cart.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\options.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\category.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\abcd.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\cancel.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\warning.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\warning %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\price-tag.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\prod123.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\cart.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\dollar-symbol.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\warehouse.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\quality.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="inventario.ico" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
